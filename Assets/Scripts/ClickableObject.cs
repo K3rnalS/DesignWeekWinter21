@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
 {
+    public GameObject item; //what item does the player get when they click on this object?
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,15 +13,20 @@ public class ClickableObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Fire1"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray))
-                Debug.Log("Item here!");
-            else
-                Debug.Log("No item here");
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+                Interact(hit.transform.gameObject);
         }
+    }
+
+    void Interact(GameObject obj)
+    {
+        if (obj.GetComponent<Ingredient>())
+            obj.GetComponent<Ingredient>().Interact();
     }
 }
