@@ -36,10 +36,12 @@ public class Cauldron : MonoBehaviour
     //add an ingredient to the cauldron, then check if any potions have been made
     public void AddIngredient(Color ing)
     {
+        if (ings.Count > 2)
+            return;
+
         ings.Add(ing);
 
         rend.material.color = ing;
-        Debug.Log(ings.Count);
 
         if (ings.Count == 2)
             CheckForPotion();
@@ -63,6 +65,7 @@ public class Cauldron : MonoBehaviour
         }
 
         ResetCauldron();
+
         return potion;
     }
 

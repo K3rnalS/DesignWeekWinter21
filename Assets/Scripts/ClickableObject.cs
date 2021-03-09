@@ -28,6 +28,7 @@ public class ClickableObject : MonoBehaviour
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
                         break;
                     default:
+                        Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
                         break;
                 }
 
@@ -41,6 +42,11 @@ public class ClickableObject : MonoBehaviour
     {
         if (obj.GetComponent<Ingredient>())
             obj.GetComponent<Ingredient>().Interact();
+    }
+
+    public void GoToDefaultPosition()
+    {
+        Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
     }
 
     private void SendMessageToCamera()
