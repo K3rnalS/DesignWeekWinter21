@@ -4,29 +4,40 @@ using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
 {
-    public GameObject item; //what item does the player get when they click on this object?
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
-                Interact(hit.transform.gameObject);
+            {
+                switch (hit.collider.gameObject.tag)
+                {
+                    case "Spell":
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Spell);
+                        break;
+                    case "Potion":
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+            
         }
     }
 
-    void Interact(GameObject obj)
+    private void SendMessageToCamera()
     {
-        if (obj.GetComponent<Ingredient>())
-            obj.GetComponent<Ingredient>().Interact();
+
     }
 }
