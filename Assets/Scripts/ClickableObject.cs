@@ -22,18 +22,25 @@ public class ClickableObject : MonoBehaviour
                 switch (hit.collider.gameObject.tag)
                 {
                     case "Spell":
-                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Spell);
+                        Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Spell);
                         break;
                     case "Potion":
-                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
+                        Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
                         break;
                     default:
                         break;
                 }
 
+                Interact(hit.transform.gameObject);
             }
             
         }
+    }
+
+    void Interact(GameObject obj)
+    {
+        if (obj.GetComponent<Ingredient>())
+            obj.GetComponent<Ingredient>().Interact();
     }
 
     private void SendMessageToCamera()
