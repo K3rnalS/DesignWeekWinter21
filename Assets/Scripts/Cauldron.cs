@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour
 {
     public MeshRenderer rend;
+    public MissionObj mission;
 
     public struct PotionOutcome
     {
@@ -37,7 +38,7 @@ public class Cauldron : MonoBehaviour
     //add an ingredient to the cauldron, then check if any potions have been made
     public void AddIngredient(Color ing)
     {
-        if (ings.Count > 2)
+        if (ings.Count >= 2)
             return;
 
         ings.Add(ing);
@@ -58,42 +59,46 @@ public class Cauldron : MonoBehaviour
             potion.GetComponent<Potion>().color = orange.result;
         else if (ings.Contains(Color.green) && ings.Contains(Color.blue))
             potion.GetComponent<Potion>().color = cyan.result;
-        else if (ings.Contains(Color.red) && ings.Contains(Color.green))
+        else if (ings.Contains(Color.blue) && ings.Contains(Color.blue))
             potion.GetComponent<Potion>().color = violet.result;
         else
         {
-            ResetCauldron();
             Destroy(potion);
+            rend.material.color = new Color(0, 0.4f, 0);
+            mission.OpenTextBox("That potion didn't seem to have any effect.");
+            ResetCauldron();
             return null;
         }
 
-        ResetCauldron();
+        Debug.Log(potion.GetComponent<Potion>().color);
+
+        rend.material.color = potion.GetComponent<Potion>().color;
 
         return potion;
     }
 
-    void ResetCauldron()
+    public void ResetCauldron()
     {
         ings.Clear();
-        rend.material.color = Color.white;
+        rend.material.color = new Color(0, 0.4f, 0);
     }
 
     void InitPotionOutcomes()
     {
         purple.col1 = Color.red;
         purple.col2 = Color.blue;
-        purple.result = new Color(128, 0, 128);
+        purple.result = new Color(0.50f, 0, 0.50f);
 
         orange.col1 = Color.red;
         orange.col2 = Color.green;
-        orange.result = new Color(255, 165, 0);
+        orange.result = new Color(1, 0.65f, 0);
 
         cyan.col1 = Color.green;
         cyan.col2 = Color.blue;
-        cyan.result = new Color(0, 255, 255);
+        cyan.result = new Color(0, 1, 1);
 
         violet.col1 = Color.red;
         violet.col2 = Color.green;
-        violet.result = new Color(127, 0, 255);
+        violet.result = new Color(0.50f, 0, 1);
     }
 }

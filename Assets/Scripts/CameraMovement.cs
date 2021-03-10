@@ -75,23 +75,23 @@ public class CameraMovement : MonoBehaviour
 
     private void OnMovementStart()
     {
-        Debug.Log("Movemen start");
+
     }
 
     private void OnMovementComplete()
     {
-        Debug.Log("Movemen done");
+
     }
 
     private void OnRotationStart()
     {
-        Debug.Log("rotate start");
+
 
     }
 
     private void OnRotationComplete()
     {
-        Debug.Log("rotate done");
+
     }
 
     

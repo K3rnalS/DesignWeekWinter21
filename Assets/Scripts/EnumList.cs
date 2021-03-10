@@ -8,6 +8,7 @@ public class EnumList
     {
         Default,
         Spell,
-        Potion
+        Potion,
+        PotionSheet,
     }
 }

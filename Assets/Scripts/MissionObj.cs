@@ -23,10 +23,10 @@ public class MissionObj : MonoBehaviour
     public string spellProtEnd;
     public string spellSummEnd;
 
-    Color purple = new Color(128, 0, 128);
-    Color orange = new Color(255, 165, 0);
-    Color cyan = new Color(0, 255, 255);
-    Color violet = new Color(127, 0, 255);
+    Color purple = new Color(0.50f, 0, 0.50f);
+    Color orange = new Color(1, 0.65f, 0);
+    Color cyan = new Color(0, 1, 1);
+    Color violet = new Color(0.50f, 0, 1);
 
     // Start is called before the first frame update
     void Start()

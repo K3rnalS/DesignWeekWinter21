@@ -27,6 +27,9 @@ public class ClickableObject : MonoBehaviour
                     case "Potion":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
                         break;
+                    case "PotionSheet":
+                        Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.PotionSheet);
+                        break;
                     default:
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
                         break;
@@ -42,6 +45,8 @@ public class ClickableObject : MonoBehaviour
     {
         if (obj.GetComponent<Ingredient>())
             obj.GetComponent<Ingredient>().Interact();
+        else if (obj.GetComponent<CauldronLiquid>())
+            obj.GetComponent<CauldronLiquid>().Interact();
     }
 
     public void GoToDefaultPosition()
