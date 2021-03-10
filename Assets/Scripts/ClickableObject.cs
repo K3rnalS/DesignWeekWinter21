@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ClickableObject : MonoBehaviour
 {
+    public GameObject UISpellMake;
+    public GameObject currentSpell;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,11 +50,26 @@ public class ClickableObject : MonoBehaviour
             obj.GetComponent<Ingredient>().Interact();
         else if (obj.GetComponent<CauldronLiquid>())
             obj.GetComponent<CauldronLiquid>().Interact();
+        else if (obj.gameObject.CompareTag("Spell"))
+            SpellMake();
+    }
+
+    public void SpellMake()
+    {
+        UISpellMake.SetActive(true);
+        currentSpell.SetActive(true);
+    }
+
+    public void CloseSpellMake()
+    {
+        UISpellMake.SetActive(false);
+        currentSpell.SetActive(false);
     }
 
     public void GoToDefaultPosition()
     {
         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
+        CloseSpellMake();
     }
 
     private void SendMessageToCamera()

@@ -9,6 +9,8 @@ public class MissionObj : MonoBehaviour
     public Color potReq; //required potion to fulfill mission
     public GameObject spellReq; //required spell to fulfill mission
 
+    public bool inProgress = false;
+
     public Text textBox;
     public Image bg;
     public Button close;
@@ -75,8 +77,27 @@ public class MissionObj : MonoBehaviour
             OpenTextBox(potCharismaEnd);
     }
 
-    public void SpellCheck()
-    { 
-        
+    public void SpellCheck(int spellType)
+    {
+        Debug.Log("YO");
+        switch (spellType)
+        {
+            case 0:
+                OpenTextBox(spellSummEnd);
+                break;
+            case 1:
+                OpenTextBox(spellInvEnd);
+                break;
+            case 2:
+                OpenTextBox(spellCurseEnd);
+                break;
+            case 3:
+                OpenTextBox(spellProtEnd);
+                break;
+            default:
+                break;
+        }
+
+        Debug.Log("Completed mission with " + spellType);
     }
 }
