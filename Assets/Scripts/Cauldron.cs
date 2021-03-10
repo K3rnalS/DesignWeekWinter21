@@ -13,9 +13,10 @@ public class Cauldron : MonoBehaviour
         public Color result;
     }
 
-    PotionOutcome purple;
-    PotionOutcome orange;
-    PotionOutcome cyan;
+    public PotionOutcome purple;
+    public PotionOutcome orange;
+    public PotionOutcome cyan;
+    public PotionOutcome violet;
 
     public List<Color> ings;
 
@@ -57,6 +58,8 @@ public class Cauldron : MonoBehaviour
             potion.GetComponent<Potion>().color = orange.result;
         else if (ings.Contains(Color.green) && ings.Contains(Color.blue))
             potion.GetComponent<Potion>().color = cyan.result;
+        else if (ings.Contains(Color.red) && ings.Contains(Color.green))
+            potion.GetComponent<Potion>().color = violet.result;
         else
         {
             ResetCauldron();
@@ -88,5 +91,9 @@ public class Cauldron : MonoBehaviour
         cyan.col1 = Color.green;
         cyan.col2 = Color.blue;
         cyan.result = new Color(0, 255, 255);
+
+        violet.col1 = Color.red;
+        violet.col2 = Color.green;
+        violet.result = new Color(127, 0, 255);
     }
 }
