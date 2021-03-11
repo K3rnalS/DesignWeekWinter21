@@ -17,6 +17,11 @@ public class Spell : MonoBehaviour
     public Sprite circle;
     public Sprite pentagon;
 
+    public AudioSource audioSrc;
+    public AudioClip paperRuffle;
+    public AudioClip correct;
+    public AudioClip wrong;
+
     public enum ShapeType 
     {
         Square,

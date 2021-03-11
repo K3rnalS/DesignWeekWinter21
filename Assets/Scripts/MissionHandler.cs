@@ -7,11 +7,14 @@ public class MissionHandler : MonoBehaviour
 {
     public GameObject currentMission;
     public List<GameObject> missions;
-    int missionIndex = 0;
 
     public Text textBox;
     public Image bg;
     public Button close;
+
+    public AudioSource audioSrc;
+    public AudioClip doorOpen;
+    public AudioClip announcement;
 
     // Start is called before the first frame update
     void Start()

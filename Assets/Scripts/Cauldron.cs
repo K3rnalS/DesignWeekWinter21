@@ -7,6 +7,12 @@ public class Cauldron : MonoBehaviour
     public MeshRenderer rend;
     public MissionHandler mission;
 
+    public AudioSource audioSrc;
+    public AudioClip bubble;
+    public AudioClip liquidDrop;
+    public AudioClip correct;
+    public AudioClip wrong;
+
     public struct PotionOutcome
     {
         public Color col1;
