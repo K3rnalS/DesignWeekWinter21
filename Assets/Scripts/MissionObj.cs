@@ -16,6 +16,7 @@ public class MissionObj : MonoBehaviour
     public bool complete = false;
     public GameObject nextMission; //mission to activate once this one is done, if any
     public MissionHandler handler; //the mission handler
+    public Text questHeader;
 
     public string potPoisonEnd;
     public string potCharismaEnd;
@@ -38,7 +39,8 @@ public class MissionObj : MonoBehaviour
         handler = GetComponentInParent<MissionHandler>();
         handler.OpenTextBox(NPCIntro);
 
-        Debug.Log(handler);
+        questHeader = handler.questHeader;
+        questHeader.text = simpText;
     }
 
     // Update is called once per frame
@@ -55,13 +57,14 @@ public class MissionObj : MonoBehaviour
     public void PotionCheck(Color col)
     {
         if (!potReq)
+        {
+            handler.Alert("I don't think they came for a potion!");
             return;
+        }
 
-        handler = GetComponentInParent<MissionHandler>();
+        //handler = GetComponentInParent<MissionHandler>();
 
-        if (handler == null)
-            Debug.Log(transform);
-
+        Debug.Log(orange);
         if (col == purple)
         {
             handler.OpenTextBox(potPoisonEnd);
@@ -88,7 +91,7 @@ public class MissionObj : MonoBehaviour
     {
         if (!spellReq)
         {
-            handler.OpenTextBox("I don't think a spell will come in handy for this!");
+            handler.Alert("I don't think a spell will come in handy for this!");
             return;
         }
 

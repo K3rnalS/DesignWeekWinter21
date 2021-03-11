@@ -9,8 +9,14 @@ public class MissionHandler : MonoBehaviour
     public List<GameObject> missions;
 
     public Text textBox;
-    public Image bg;
+    public Text alertText;
+    public GameObject alertBox;
     public Button close;
+    public Text questHeader;
+    public Image character;
+
+    public GameObject potionButts;
+    public GameObject spellButts;
 
     public AudioSource audioSrc;
     public AudioClip doorOpen;
@@ -31,20 +37,38 @@ public class MissionHandler : MonoBehaviour
 
     public void OpenTextBox(string newText)
     {
-        // this audio code is what will activate the audio.
-        AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Announcement);
         textBox.text = newText;
-        textBox.gameObject.SetActive(true);
-        bg.gameObject.SetActive(true);
+        //textBox.gameObject.SetActive(true);
+        //bg.gameObject.SetActive(true);
+    }
+
+    public void Alert(string alert)
+    {
+        alertText.text = alert;
+        alertBox.SetActive(true);
         close.gameObject.SetActive(true);
     }
 
-    public void CloseTextBox()
+    public void CloseAlert()
     {
-        textBox.text = "";
-        textBox.gameObject.SetActive(false);
-        bg.gameObject.SetActive(false);
+        alertText.text = "";
+        alertBox.SetActive(false);
         close.gameObject.SetActive(false);
+        potionButts.SetActive(false);
+        spellButts.SetActive(false);
+    }
+
+    public void Prompt(string prompt, int type)
+    {
+        if (type == 0)
+            potionButts.SetActive(true);
+        else if (type == 1)
+            spellButts.SetActive(true);
+        else
+            return;
+
+        alertBox.SetActive(true);
+        alertText.text = prompt;
     }
 
     public void GenerateMission()

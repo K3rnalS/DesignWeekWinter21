@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cauldron : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class Cauldron : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //add an ingredient to the cauldron, then check if any potions have been made
@@ -54,32 +55,31 @@ public class Cauldron : MonoBehaviour
         GameObject potion = new GameObject("Potion", typeof(Potion));
 
         if (ings.Contains(Color.red) && ings.Contains(Color.blue))
-        {
+		{
             potion.GetComponent<Potion>().color = purple.result;
-            AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
-        }
+			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
+		}
         else if (ings.Contains(Color.red) && ings.Contains(Color.green))
-        {
+		{
             potion.GetComponent<Potion>().color = orange.result;
-            AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
-        } 
+			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
+		}
         else if (ings.Contains(Color.green) && ings.Contains(Color.blue))
-        {
+		{
             potion.GetComponent<Potion>().color = cyan.result;
-            AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
-        }   
+			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
+		}
         else if (ings.Contains(Color.blue) && ings.Contains(Color.blue))
-        {
+		{
             potion.GetComponent<Potion>().color = violet.result;
-            AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
-        }
-            
+			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
+		}
         else
         {
-            AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Wrong);
+			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Wrong);
             Destroy(potion);
             rend.material.color = new Color(0, 0.4f, 0);
-            mission.OpenTextBox("That potion didn't seem to have any effect.");
+            mission.Alert("That potion didn't seem to have any effect.");
             ResetCauldron();
             return null;
         }
