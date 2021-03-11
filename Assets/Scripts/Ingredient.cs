@@ -7,8 +7,6 @@ public class Ingredient : MonoBehaviour
     public Color color;
     public Cauldron cauldron;
 
-    public AudioSource audioSrc;
-    public AudioClip clink;
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +23,6 @@ public class Ingredient : MonoBehaviour
     public void Interact()
     {
         cauldron.AddIngredient(color);
+        AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Clink);
     }
 }
