@@ -36,6 +36,8 @@ public class MissionObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inProgress = true;
+
         handler = GetComponentInParent<MissionHandler>();
         handler.OpenTextBox(NPCIntro);
 
@@ -62,9 +64,6 @@ public class MissionObj : MonoBehaviour
             return;
         }
 
-        //handler = GetComponentInParent<MissionHandler>();
-
-        Debug.Log(orange);
         if (col == purple)
         {
             handler.OpenTextBox(potPoisonEnd);

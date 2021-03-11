@@ -7,20 +7,22 @@ public class MissionHandler : MonoBehaviour
 {
     public GameObject currentMission;
     public List<GameObject> missions;
+    int missionCompleteCount = 0;
 
-    public Text textBox;
-    public Text alertText;
-    public GameObject alertBox;
-    public Button close;
-    public Text questHeader;
-    public Image character;
+    //== UI ==//
+    public Text textBox; //Slide-out text box for quest descriptions
+    public Text alertText; //alert message text
+    public GameObject alertBox; //alert message box
+    public Button close; //close button
+    public Text questHeader; //quest header
+    public Image character; //character portrait
+    public GameObject finish; //finish button
 
     public GameObject potionButts;
     public GameObject spellButts;
 
-    public AudioSource audioSrc;
-    public AudioClip doorOpen;
-    public AudioClip announcement;
+    public GameObject canvas; //UI Canvas
+    public GameObject SlideOutCopy; //a copy of the quest log to duplicate for delayed endings
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +75,13 @@ public class MissionHandler : MonoBehaviour
 
     public void GenerateMission()
     {
+        //if all missions complete, show an ending if we ever get it in
+        if (missionCompleteCount >= missions.Count)
+        {
+            Debug.Log("out of missions!");
+            return;
+        }
+
         if (currentMission != null && currentMission.GetComponent<MissionObj>().nextMission != null)
         {
             GameObject obj = Instantiate(currentMission.GetComponent<MissionObj>().nextMission, transform);
@@ -85,7 +94,8 @@ public class MissionHandler : MonoBehaviour
             int index = Random.Range(0, missions.Count);
             GameObject obj;
 
-            while (missions[index].GetComponent<MissionObj>().complete)
+            //keep generating a number until a mission that isn't in progress or complete shows up
+            while (missions[index].GetComponent<MissionObj>().complete || missions[index].GetComponent<MissionObj>().inProgress)
             {
                 if (checkCount > 10)
                 {
@@ -114,7 +124,17 @@ public class MissionHandler : MonoBehaviour
     public void CompleteMission()
     {
         if (currentMission.GetComponent<MissionObj>().complete)
+        {
+            missionCompleteCount += 1;
             GenerateMission();
+        }
+    }
+
+    //delay the ending of a quest -- in the meantime, a new one shows up
+    public IEnumerator QuestResult()
+    {
+        Instantiate(SlideOutCopy, canvas.transform);
+        yield return new WaitForSeconds(Random.Range(15, 30)); //wait a random amount of time, then show the quest ending
     }
 
     public GameObject GetCurrentMission()

@@ -31,7 +31,6 @@ public class CauldronLiquid : MonoBehaviour
 
     public void Check()
     {
-        Debug.Log(rend.material.color);
         mission.currentMission.GetComponent<MissionObj>().PotionCheck(rend.material.color);
         cauldron.ResetCauldron();
         mission.CloseAlert();
