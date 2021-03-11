@@ -16,6 +16,7 @@ public class MissionHandler : MonoBehaviour
     void Start()
     {
         currentMission = missions[0];
+        Instantiate(missions[0], transform);
     }
 
     // Update is called once per frame
@@ -62,6 +63,12 @@ public class MissionHandler : MonoBehaviour
             Instantiate(currentMission, transform);
         }
 
+    }
+
+    public void CompleteMission()
+    {
+        if (!close.IsActive())
+            GenerateMission();
     }
 
     public GameObject GetCurrentMission()

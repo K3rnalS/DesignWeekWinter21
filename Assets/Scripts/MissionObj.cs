@@ -45,8 +45,8 @@ public class MissionObj : MonoBehaviour
     }
 
     void CompleteMission()
-    { 
-        
+    {
+        handler.CompleteMission();
     }
 
     public void PotionCheck(Color col)
@@ -55,13 +55,25 @@ public class MissionObj : MonoBehaviour
             return;
 
         if (col == purple)
+        {
             handler.OpenTextBox(potPoisonEnd);
+            CompleteMission();
+        }
         else if (col == orange)
+        {
             handler.OpenTextBox(potAntidoteEnd);
+            CompleteMission();
+        }
         else if (col == cyan)
+        {
             handler.OpenTextBox(potTruthEnd);
+            CompleteMission();
+        }
         else if (col == violet)
+        {
             handler.OpenTextBox(potCharismaEnd);
+            CompleteMission();
+        }
     }
 
     public void SpellCheck(int spellType)
@@ -73,15 +85,19 @@ public class MissionObj : MonoBehaviour
         {
             case 0:
                 handler.OpenTextBox(spellSummEnd);
+                CompleteMission();
                 break;
             case 1:
                 handler.OpenTextBox(spellInvEnd);
+                CompleteMission();
                 break;
             case 2:
                 handler.OpenTextBox(spellCurseEnd);
+                CompleteMission();
                 break;
             case 3:
                 handler.OpenTextBox(spellProtEnd);
+                CompleteMission();
                 break;
             default:
                 break;
