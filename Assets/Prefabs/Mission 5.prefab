@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1524938454193194909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5656867822048990608}
+  - component: {fileID: 5384904998200514677}
+  m_Layer: 0
+  m_Name: Mission 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5656867822048990608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524938454193194909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3253486, y: -0.62016475, z: 1.4237812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5384904998200514677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524938454193194909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb4fa9bb3ebcf242bb04bf17bd35fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: A Plague Upon House Holister
+  NPCIntro: 'From the desk of Duke Holister: A plague is sweeping the city, my noble
+    house is dying! Please, what can you do to help us? You are our last hope! Our
+    line must continue!'
+  simpText: 
+  potReq: 1
+  spellReq: 0
+  inProgress: 0
+  nextMission: {fileID: 0}
+  handler: {fileID: 0}
+  textBox: {fileID: 0}
+  bg: {fileID: 0}
+  close: {fileID: 0}
+  potPoisonEnd: What a shame! What a horrible harbinger of the end of an era! The
+    head of House Holister has died of the awful plague sweeping the city!
+  potCharismaEnd: "House Holister has been quite successful in advocating for better
+    sanitation during this trying time. Though they\u2019ve suffered their share
+    of loss as well, it\u2019s gone far in lessening the effect of the plague. It
+    seems the other house\u2019s opinion of them is much improved."
+  potAntidoteEnd: One of the few houses to survive the plague that is sweeping the
+    city thus far untouched seems to be house Holister. Certainly the other houses
+    will have questions to ask of them.
+  potTruthEnd: "Regarding house Holister; it seems nothing much has changed for better
+    or for worse. Some, though not all of the noble house suffers under the burden
+    of plague. I doubt we\u2019ll be hearing from the Duke for some time."
+  spellInvEnd: 
+  spellCurseEnd: 
+  spellProtEnd: 
+  spellSummEnd: 

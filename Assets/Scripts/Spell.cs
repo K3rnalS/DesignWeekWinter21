@@ -23,7 +23,6 @@ public class Spell : MonoBehaviour
         Triangle,
         Circle,
         Pentagon,
-        Diamond,
         None
     }
 
@@ -51,15 +50,19 @@ public class Spell : MonoBehaviour
         {
             case 0:
                 UIShape1.sprite = sprite;
+                UIShape1.color = new Color(1, 1, 1, 1);
                 break;
             case 1:
                 UIShape2.sprite = sprite;
+                UIShape2.color = new Color(1, 1, 1, 1);
                 break;
             case 2:
                 UIShape3.sprite = sprite;
+                UIShape3.color = new Color(1, 1, 1, 1);
                 break;
             case 3:
                 UIShape4.sprite = sprite;
+                UIShape4.color = new Color(1, 1, 1, 1);
                 break;
             default:
                 break;
@@ -67,21 +70,18 @@ public class Spell : MonoBehaviour
 
         currentShapeIndex += 1;
 
-        Debug.Log(currentShapeIndex);
-
         if (currentShapeIndex >= 4)
             CheckSpell();
     }
 
     void CheckSpell()
     {
-        Debug.Log("Checking");
         if (shapeOrder[0] == ShapeType.Circle) //Summoning
         {
-            if (shapeOrder[1] == ShapeType.Diamond)
+            if (shapeOrder[1] == ShapeType.Square)
                 if (shapeOrder[2] == ShapeType.Circle)
                     if (shapeOrder[3] == ShapeType.Square)
-                        mission.GetCurrentMission().SpellCheck(0);
+                        mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(0);
         }
 
         else if (shapeOrder[0] == ShapeType.Pentagon) //Invisibility
@@ -89,22 +89,22 @@ public class Spell : MonoBehaviour
             if (shapeOrder[1] == ShapeType.Circle)
                 if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Pentagon)
-                        mission.GetCurrentMission().SpellCheck(1);
+                        mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(1);
         }
 
         else if (shapeOrder[0] == ShapeType.Triangle) //Curse
         {
             if (shapeOrder[1] == ShapeType.Pentagon)
-                if (shapeOrder[2] == ShapeType.Diamond)
+                if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Circle)
-                        mission.GetCurrentMission().SpellCheck(2);
+                        mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(2);
         }
 
         else if (shapeOrder[0] == ShapeType.Square) //Protection
-            if (shapeOrder[1] == ShapeType.Diamond)
+            if (shapeOrder[1] == ShapeType.Square)
                 if (shapeOrder[2] == ShapeType.Circle)
                     if (shapeOrder[3] == ShapeType.Pentagon)
-                        mission.GetCurrentMission().SpellCheck(3);
+                        mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(3);
 
         ResetSpell();
     }
@@ -112,9 +112,13 @@ public class Spell : MonoBehaviour
     void ResetSpell()
     {
         UIShape1.sprite = null;
+        UIShape1.color = new Color(1, 1, 1, 0);
         UIShape2.sprite = null;
+        UIShape2.color = new Color(1, 1, 1, 0);
         UIShape3.sprite = null;
+        UIShape3.color = new Color(1, 1, 1, 0);
         UIShape4.sprite = null;
+        UIShape4.color = new Color(1, 1, 1, 0);
 
         for (int i = 0; i < 4; i++)
             shapeOrder[i] = ShapeType.None;
@@ -125,11 +129,6 @@ public class Spell : MonoBehaviour
     public void SetSquare()
     {
         InsertShape(ShapeType.Square, square);
-    }
-
-    public void SetDiamond()
-    {
-        InsertShape(ShapeType.Diamond, square);
     }
 
     public void SetTriangle()

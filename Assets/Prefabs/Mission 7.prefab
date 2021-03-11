@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2161183973411530867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7644151933288054224}
+  - component: {fileID: 4406343911601600534}
+  m_Layer: 0
+  m_Name: Mission 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7644151933288054224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161183973411530867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3253486, y: -0.62016475, z: 1.4237812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4406343911601600534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161183973411530867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb4fa9bb3ebcf242bb04bf17bd35fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: A Situation in the Mines
+  NPCIntro: A Minister from Atredes is looking for a way to increase the effectiveness
+    of his mine workers. He claims that they've become superstitious lately, and
+    refuse to work in the new vein of the mine. He wants to look into it himself.
+    Perhaps we can offer him a spell to help his investigation?
+  simpText: 
+  potReq: 0
+  spellReq: 1
+  inProgress: 0
+  nextMission: {fileID: 0}
+  handler: {fileID: 0}
+  textBox: {fileID: 0}
+  bg: {fileID: 0}
+  close: {fileID: 0}
+  potPoisonEnd: 
+  potCharismaEnd: 
+  potAntidoteEnd: 
+  potTruthEnd: 
+  spellInvEnd: It seems that the minister sent his guards into the mines for reconnaissance.
+    The miners have been complaining about strange whispering in the new tunnels.
+    We'll keep you updated if anything new surfaces.
+  spellCurseEnd: It seems the miners have stop complaining about the new branch of
+    tunnels. Our agents have reported that the minister has been seeing shadowy figures
+    in the halls of his manor at night.
+  spellProtEnd: It seems that the situation has calmed down. The miners seem amenable
+    to working in the tunnels again.
+  spellSummEnd: "There\u2019s been a collapse in the mine! Everyone is talking about
+    it. Seems no one knows that cause just yet. None of the miners that were on duty
+    at the time are willing to talk about it."

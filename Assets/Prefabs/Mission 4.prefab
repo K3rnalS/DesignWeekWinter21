@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8233042753770202929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7077750758982341628}
+  - component: {fileID: 3061341909040239214}
+  m_Layer: 0
+  m_Name: Mission 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7077750758982341628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233042753770202929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3253486, y: -0.62016475, z: 1.4237812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3061341909040239214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233042753770202929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb4fa9bb3ebcf242bb04bf17bd35fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: 'A Battle of Fops '
+  NPCIntro: I am friends with a young lord from house Atredes, while I have grown
+    to appreciate his friendship and perspective, we seem to bicker no matter how
+    hard I try, might you offer me a way to bridge the gap between us?
+  simpText: 
+  potReq: 0
+  spellReq: 1
+  inProgress: 0
+  nextMission: {fileID: 0}
+  handler: {fileID: 0}
+  textBox: {fileID: 0}
+  bg: {fileID: 0}
+  close: {fileID: 0}
+  potPoisonEnd: 
+  potCharismaEnd: 
+  potAntidoteEnd: 
+  potTruthEnd: 
+  spellInvEnd: "Your spell worked like a charm! Last evening, I snuck into the young
+    lords chambers and caught him fussing over a diary entry. Apparently he is deeply
+    in love with someone! Though I\u2019m loathe to admit, I failed to find out who.
+    Perhaps if I can figure out who it is and put in a good word for him I can yet
+    prove myself a good friend."
+  spellCurseEnd: "We\u2019ve received a letter from house Corrim. The young man who
+    came to us for help wishes to inform you that his investigation of the lord from
+    house Atredes was an utter train wreck. Ink was spilled all over some rather
+    important documents, and apparently the young lord twisted his ankle. What a
+    pity."
+  spellProtEnd: "We\u2019ve received a letter from house Corrim. The young man who
+    came to us for help wishes to inform you that his investigation of the lord from
+    house Atredes was an utter train wreck. Ink was spilled all over some rather
+    important documents, and apparently the young lord twisted his ankle. What a
+    pity."
+  spellSummEnd: A letter from house Corrim. Apparently the young man from house Atredes
+    was quite impressed by our clients skill in magic, but was otherwise quite miffed
+    to spend the day together rounding up and exercising the horde of summoned imps
+    that results from our spell.

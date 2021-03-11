@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class MissionObj : MonoBehaviour
 {
+    public string questName;
     public string NPCIntro; //the NPC's opening dialogue
-    public Color potReq; //required potion to fulfill mission
-    public GameObject spellReq; //required spell to fulfill mission
+    public string simpText; //simplified quest description
+
+    public bool potReq; //required potion to fulfill mission
+    public bool spellReq; //required spell to fulfill mission
 
     public bool inProgress = false;
-
-    public Text textBox;
-    public Image bg;
-    public Button close;
+    public MissionObj nextMission; //mission to activate once this one is done, if any
+    public MissionHandler handler; //the mission handler
 
     public string potPoisonEnd;
     public string potCharismaEnd;
@@ -33,71 +34,57 @@ public class MissionObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textBox.text = NPCIntro;
+        handler = GetComponentInParent<MissionHandler>();
+        handler.OpenTextBox(NPCIntro);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    void CompleteMission()
+    { 
         
-    }
-
-    IEnumerator TextTimer(float secs)
-    {
-        yield return new WaitForSeconds(secs);
-        textBox.text = "";
-        textBox.gameObject.SetActive(false);
-    }
-
-    public void OpenTextBox(string newText)
-    {
-        textBox.text = newText;
-        textBox.gameObject.SetActive(true);
-        bg.gameObject.SetActive(true);
-        close.gameObject.SetActive(true);
-    }
-
-    public void CloseTextBox()
-    {
-        textBox.text = "";
-        textBox.gameObject.SetActive(false);
-        bg.gameObject.SetActive(false);
-        close.gameObject.SetActive(false);
     }
 
     public void PotionCheck(Color col)
     {
+        if (!potReq)
+            return;
+
         if (col == purple)
-            OpenTextBox(potPoisonEnd);
+            handler.OpenTextBox(potPoisonEnd);
         else if (col == orange)
-            OpenTextBox(potAntidoteEnd);
+            handler.OpenTextBox(potAntidoteEnd);
         else if (col == cyan)
-            OpenTextBox(potTruthEnd);
+            handler.OpenTextBox(potTruthEnd);
         else if (col == violet)
-            OpenTextBox(potCharismaEnd);
+            handler.OpenTextBox(potCharismaEnd);
     }
 
     public void SpellCheck(int spellType)
     {
-        Debug.Log("YO");
+        if (!spellReq)
+            return;
+
         switch (spellType)
         {
             case 0:
-                OpenTextBox(spellSummEnd);
+                handler.OpenTextBox(spellSummEnd);
                 break;
             case 1:
-                OpenTextBox(spellInvEnd);
+                handler.OpenTextBox(spellInvEnd);
                 break;
             case 2:
-                OpenTextBox(spellCurseEnd);
+                handler.OpenTextBox(spellCurseEnd);
                 break;
             case 3:
-                OpenTextBox(spellProtEnd);
+                handler.OpenTextBox(spellProtEnd);
                 break;
             default:
                 break;
         }
-
-        Debug.Log("Completed mission with " + spellType);
     }
 }

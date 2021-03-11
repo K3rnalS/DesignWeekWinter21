@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8153807308550946895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8153807308550946892}
+  - component: {fileID: 5936293613217991903}
+  m_Layer: 0
+  m_Name: Mission 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8153807308550946892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153807308550946895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.3253486, y: -0.62016475, z: 1.4237812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5936293613217991903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8153807308550946895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb4fa9bb3ebcf242bb04bf17bd35fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: When I grow up, I wanna be just like you!
+  NPCIntro: A small child has snuck into your laboratory. Impressive that they managed
+    to get past your guards. They giggle and laugh and talk about how much they want
+    to be a master magician when they grow up. Before long one of your agents rushes
+    in to cart them away, apologizing profusely to you.
+  simpText: 
+  potReq: 0
+  spellReq: 1
+  inProgress: 0
+  nextMission: {fileID: 0}
+  handler: {fileID: 0}
+  textBox: {fileID: 0}
+  bg: {fileID: 0}
+  close: {fileID: 0}
+  potPoisonEnd: 
+  potCharismaEnd: 
+  potAntidoteEnd: 
+  potTruthEnd: 
+  spellInvEnd: "The kitchen staff has begun complaining of their best sweets going
+    missing. You\u2019ve assured them you haven\u2019t the faintest clue what the
+    cause might be."
+  spellCurseEnd: "A potential rival eliminated before they\u2019d even begun."
+  spellProtEnd: "The child\u2019s studies continue. They show great progress in both
+    magic and espionage, and good fortune seems to follow at their heels like a loyal
+    hound."
+  spellSummEnd: The child loves their loyal new pet, no matter how many eyes it might
+    have.

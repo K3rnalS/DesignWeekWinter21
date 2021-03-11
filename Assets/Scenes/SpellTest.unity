@@ -212,7 +212,7 @@ Transform:
   m_LocalScale: {x: 0.44371444, y: 0.51332, z: 0.073078}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -22.635, y: 89.65, z: 0}
 --- !u!1 &66860140
 GameObject:
@@ -264,7 +264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &149369771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cauldron: {fileID: 1942775472}
-  mission: {fileID: 607929721}
+  mission: {fileID: 0}
 --- !u!64 &206153021
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 607929721}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseTextBox
         m_Mode: 1
         m_Arguments:
@@ -784,7 +784,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 65.527, y: -187.381, z: 44.517002}
 --- !u!1001 &579457715
 PrefabInstance:
@@ -801,7 +801,7 @@ PrefabInstance:
     - target: {fileID: 8192862201447313096, guid: 8a7e2be4a1a2f884d9a4fce4e6e68011,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8192862201447313096, guid: 8a7e2be4a1a2f884d9a4fce4e6e68011,
         type: 3}
@@ -860,76 +860,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7e2be4a1a2f884d9a4fce4e6e68011, type: 3}
---- !u!1 &607929720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 607929722}
-  - component: {fileID: 607929721}
-  m_Layer: 0
-  m_Name: Mission 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &607929721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607929720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abb4fa9bb3ebcf242bb04bf17bd35fe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NPCIntro: 'A Duchess has come to you with a request:  My husband has locked our
-    daughter in the dungeon, he plans to force to marry a truly atrocious man from
-    a neighbouring riding. This has gone on long enough. Please... please, give me
-    something to deal with him permanently. '
-  potReq: {r: 0, g: 0, b: 0, a: 0}
-  spellReq: {fileID: 0}
-  inProgress: 0
-  textBox: {fileID: 817568734}
-  bg: {fileID: 1273634998}
-  close: {fileID: 314524526}
-  potPoisonEnd: The Duke is dead. Long live the Duchess.
-  potCharismaEnd: It seems duchess Conwyn's daughter is set to be married next month.
-    It took some convincing, but apparently the duchess is on board with union, and
-    quite grateful that her procured poison seemed to be ineffective on her darling
-    husband.
-  potAntidoteEnd: News from your network came in earlier today. It seems that there
-    was a scuffle in a local dukedom. Apparently, in a desperate rage, the Duchess
-    attacked the Duke, and has been rounded up by the guards for attempted murder.
-  potTruthEnd: There's been a murder in a local dukedom. Apparently the Duke flew
-    off in a rage and murdered his innocent wife after confessing to many a back
-    ally murder. His daughter came forth and told the guards about his upcoming plans
-    to murder another high ranking advisor to the king. Seems like he's been rounded
-    up and put behind bars. His daughter has inherited control of her parents land.
-  spellInvEnd: 
-  spellCurseEnd: 
-  spellProtEnd: 
-  spellSummEnd: 
---- !u!4 &607929722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607929720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3253486, y: -0.62016475, z: 1.4237812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644536535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &783781406
 GameObject:
@@ -1262,14 +1192,14 @@ RectTransform:
   m_GameObject: {fileID: 783781406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 149369771}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &783781408
@@ -1285,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1373,7 +1303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817568732
 GameObject:
@@ -1692,7 +1622,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 65.527, y: -299.255, z: 44.517002}
 --- !u!1 &1136744398
 GameObject:
@@ -1791,7 +1721,7 @@ RectTransform:
   - {fileID: 1572835493}
   - {fileID: 149369771}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1832,7 +1762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184982997
@@ -1848,7 +1778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2111,8 +2041,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c55606e94ccada4589c56cd2d071ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMission: {fileID: 607929721}
-  missions: []
+  currentMission: {fileID: 0}
+  missions:
+  - {fileID: 3999254709901572595, guid: 5ee9e904fdbb4d64a8bed35e4e09621d, type: 3}
+  - {fileID: 5936293613217991903, guid: 2a3c2cc532629e040a413d045944912b, type: 3}
+  - {fileID: 5546420172850093145, guid: 6849e1c2464bbd34498415062d654bb0, type: 3}
+  - {fileID: 3061341909040239214, guid: 5e4854c305d38ea4c8dac53a84246590, type: 3}
+  - {fileID: 5384904998200514677, guid: 16cddc74e1762574295ce89b49f1ec3b, type: 3}
+  - {fileID: 527452003625775323, guid: 9bdc7d12f7512d24693cdfca19023e42, type: 3}
+  - {fileID: 4406343911601600534, guid: 49a883abe6cc0d6498be4bf615078506, type: 3}
 --- !u!4 &1318058052
 Transform:
   m_ObjectHideFlags: 0
@@ -2125,7 +2062,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1391216365
 PrefabInstance:
@@ -2291,7 +2228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491372349
 GameObject:
@@ -2320,14 +2257,14 @@ RectTransform:
   m_GameObject: {fileID: 1491372349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 149369771}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491372351
@@ -2343,7 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2616,14 +2553,14 @@ RectTransform:
   m_GameObject: {fileID: 1659552412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 149369771}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659552414
@@ -2639,7 +2576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2884,7 +2821,7 @@ Transform:
   m_LocalScale: {x: 0.44371444, y: 0.51332, z: 0.073078}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -22.635, y: 48.885002, z: 0}
 --- !u!1 &1762730147
 GameObject:
@@ -3329,7 +3266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 313132687}
-  mission: {fileID: 607929721}
+  mission: {fileID: 1318058051}
   ings: []
 --- !u!114 &1942775473
 MonoBehaviour:
@@ -3374,7 +3311,7 @@ PrefabInstance:
     - target: {fileID: 8192862201447313096, guid: 8a7e2be4a1a2f884d9a4fce4e6e68011,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8192862201447313096, guid: 8a7e2be4a1a2f884d9a4fce4e6e68011,
         type: 3}

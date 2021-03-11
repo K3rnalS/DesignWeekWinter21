@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cauldron : MonoBehaviour
 {
     public MeshRenderer rend;
-    public MissionObj mission;
+    public MissionHandler mission;
 
     public struct PotionOutcome
     {
@@ -69,8 +69,6 @@ public class Cauldron : MonoBehaviour
             ResetCauldron();
             return null;
         }
-
-        Debug.Log(potion.GetComponent<Potion>().color);
 
         rend.material.color = potion.GetComponent<Potion>().color;
 

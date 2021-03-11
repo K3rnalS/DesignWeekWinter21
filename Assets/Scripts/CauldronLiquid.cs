@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CauldronLiquid : MonoBehaviour
 {
     public Cauldron cauldron;
-    public MissionObj mission;
+    public MissionHandler mission;
     MeshRenderer rend;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class CauldronLiquid : MonoBehaviour
     {
         if (cauldron.ings.Count == 2)
         {
-            mission.PotionCheck(rend.material.color);
+            mission.currentMission.GetComponent<MissionObj>().PotionCheck(rend.material.color);
             cauldron.ResetCauldron();
         }
         else
