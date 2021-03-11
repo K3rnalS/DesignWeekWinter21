@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickableObject : MonoBehaviour
 {
     public GameObject UISpellMake;
     public GameObject currentSpell;
+
+    public GameObject header;
+    public Text headerText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,7 @@ public class ClickableObject : MonoBehaviour
                         break;
                     case "Potion":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
+                        header.SetActive(true);
                         break;
                     case "PotionSheet":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.PotionSheet);
@@ -69,6 +74,7 @@ public class ClickableObject : MonoBehaviour
     public void GoToDefaultPosition()
     {
         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
+        header.SetActive(false);
         CloseSpellMake();
     }
 

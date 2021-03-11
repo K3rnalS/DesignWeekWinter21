@@ -47,15 +47,13 @@ MonoBehaviour:
   NPCIntro: 'My husband has locked our daughter in the dungeon, he plans to force
     to marry a truly atrocious man from a neighbouring riding. This has gone on long
     enough. Please... please, give me something to deal with him permanently. '
-  simpText: 
+  simpText: The Duchess is requesting a permanent solution to her awful husband.
   potReq: 1
   spellReq: 0
   inProgress: 0
+  complete: 0
   nextMission: {fileID: 0}
   handler: {fileID: 0}
-  textBox: {fileID: 0}
-  bg: {fileID: 0}
-  close: {fileID: 0}
   potPoisonEnd: The Duke is dead. Long live the Duchess.
   potCharismaEnd: It seems duchess Conwyn's daughter is set to be married next month.
     It took some convincing, but apparently the duchess is on board with union, and

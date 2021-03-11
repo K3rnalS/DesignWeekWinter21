@@ -131,6 +131,18 @@ public class Spell : MonoBehaviour
         currentShapeIndex = 0;
     }
 
+    public void Check()
+    {
+        CheckSpell();
+        mission.CloseAlert();
+    }
+
+    public void Decline()
+    {
+        ResetSpell();
+        mission.CloseAlert();
+    }
+
     public void SetSquare()
     {
         InsertShape(ShapeType.Square, square);

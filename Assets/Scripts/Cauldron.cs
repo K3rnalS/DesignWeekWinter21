@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cauldron : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Cauldron : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //add an ingredient to the cauldron, then check if any potions have been made
@@ -71,7 +72,7 @@ public class Cauldron : MonoBehaviour
         {
             Destroy(potion);
             rend.material.color = new Color(0, 0.4f, 0);
-            mission.OpenTextBox("That potion didn't seem to have any effect.");
+            mission.Alert("That potion didn't seem to have any effect.");
             ResetCauldron();
             return null;
         }
