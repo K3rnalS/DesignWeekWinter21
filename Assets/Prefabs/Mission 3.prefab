@@ -52,11 +52,10 @@ MonoBehaviour:
   potReq: 1
   spellReq: 0
   inProgress: 0
-  nextMission: {fileID: 0}
+  complete: 0
+  nextMission: {fileID: 8233042753770202929, guid: 5e4854c305d38ea4c8dac53a84246590,
+    type: 3}
   handler: {fileID: 0}
-  textBox: {fileID: 0}
-  bg: {fileID: 0}
-  close: {fileID: 0}
   potPoisonEnd: "News from the nobles, and courtly intrigue. There was an uproar
     during a grand ball last evening. Seems a jealous young lord from house Atredes
     slipped poison into his rival\u2019s drink. What a scandal. He\u2019s been arrested,

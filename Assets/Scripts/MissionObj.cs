@@ -13,7 +13,8 @@ public class MissionObj : MonoBehaviour
     public bool spellReq; //required spell to fulfill mission
 
     public bool inProgress = false;
-    public MissionObj nextMission; //mission to activate once this one is done, if any
+    public bool complete = false;
+    public GameObject nextMission; //mission to activate once this one is done, if any
     public MissionHandler handler; //the mission handler
 
     public string potPoisonEnd;
@@ -36,23 +37,30 @@ public class MissionObj : MonoBehaviour
     {
         handler = GetComponentInParent<MissionHandler>();
         handler.OpenTextBox(NPCIntro);
+
+        Debug.Log(handler);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    void CompleteMission()
+    public void CompleteMission()
     {
-        handler.CompleteMission();
+        complete = true;
     }
 
     public void PotionCheck(Color col)
     {
         if (!potReq)
             return;
+
+        handler = GetComponentInParent<MissionHandler>();
+
+        if (handler == null)
+            Debug.Log(transform);
 
         if (col == purple)
         {
@@ -79,7 +87,10 @@ public class MissionObj : MonoBehaviour
     public void SpellCheck(int spellType)
     {
         if (!spellReq)
+        {
+            handler.OpenTextBox("I don't think a spell will come in handy for this!");
             return;
+        }
 
         switch (spellType)
         {
