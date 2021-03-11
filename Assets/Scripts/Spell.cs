@@ -17,11 +17,6 @@ public class Spell : MonoBehaviour
     public Sprite circle;
     public Sprite pentagon;
 
-    public AudioSource audioSrc;
-    public AudioClip paperRuffle;
-    public AudioClip correct;
-    public AudioClip wrong;
-
     public enum ShapeType 
     {
         Square,
@@ -50,6 +45,7 @@ public class Spell : MonoBehaviour
     void InsertShape(ShapeType shape, Sprite sprite)
     {
         shapeOrder[currentShapeIndex] = shape;
+        AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Scribble);
 
         switch (currentShapeIndex)
         {

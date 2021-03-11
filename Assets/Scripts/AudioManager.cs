@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource Audio;
 
-    public AudioClip Announcement, Bubbling, Clink, Correct, Door, Paper, Splash, Wrong;
+    public AudioClip Announcement, Bubbling, Clink, Correct, Door, Paper, Scribble, Splash, Wrong;
 
 
     public static AudioManager audioInstance;

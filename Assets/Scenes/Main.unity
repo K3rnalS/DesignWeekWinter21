@@ -917,10 +917,6 @@ MonoBehaviour:
   triangle: {fileID: 21300000, guid: 3df51c4a587c7c441ae0e52ff4e2ec2d, type: 3}
   circle: {fileID: 21300000, guid: 117653dbad2fff244b8810a6d59132bd, type: 3}
   pentagon: {fileID: 21300000, guid: 13cb7bc79bf7ab24fad48ef0fbe9728b, type: 3}
-  audioSrc: {fileID: 149369773}
-  paperRuffle: {fileID: 0}
-  correct: {fileID: 0}
-  wrong: {fileID: 0}
   spellType: 0
   shapeOrder: 
 --- !u!82 &149369773
@@ -11813,6 +11809,7 @@ MonoBehaviour:
   Correct: {fileID: 8300000, guid: 594f17b5f9cc7494ebf100e675767aab, type: 3}
   Door: {fileID: 8300000, guid: 8591b94ebf3879542b50e6034a032001, type: 3}
   Paper: {fileID: 8300000, guid: be8f93512160c134eb146c0796b4ee78, type: 3}
+  Scribble: {fileID: 8300000, guid: 7740e1afd655fb6498e7e79eda088f09, type: 3}
   Splash: {fileID: 8300000, guid: 160febd0e83cb9643a3de37bdaf30767, type: 3}
   Wrong: {fileID: 8300000, guid: 5043eb47b0f1c0f49bfe22eaf8f2a925, type: 3}
 --- !u!1001 &1287424765

@@ -26,12 +26,14 @@ public class ClickableObject : MonoBehaviour
                 {
                     case "Spell":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Spell);
+                        AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Paper);
                         break;
                     case "Potion":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
                         break;
                     case "PotionSheet":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.PotionSheet);
+                        AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Paper);
                         break;
                     default:
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
