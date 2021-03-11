@@ -56,6 +56,8 @@ MonoBehaviour:
   nextMission: {fileID: 8233042753770202929, guid: 5e4854c305d38ea4c8dac53a84246590,
     type: 3}
   handler: {fileID: 0}
+  questHeader: {fileID: 0}
+  character: {fileID: 21300000, guid: 53696a1d957758f43b13fcad305bfc0c, type: 3}
   potPoisonEnd: "News from the nobles, and courtly intrigue. There was an uproar
     during a grand ball last evening. Seems a jealous young lord from house Atredes
     slipped poison into his rival\u2019s drink. What a scandal. He\u2019s been arrested,

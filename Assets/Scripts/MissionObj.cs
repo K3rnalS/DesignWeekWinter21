@@ -17,6 +17,7 @@ public class MissionObj : MonoBehaviour
     public GameObject nextMission; //mission to activate once this one is done, if any
     public MissionHandler handler; //the mission handler
     public Text questHeader;
+    public Sprite character; //character portrait
 
     public string potPoisonEnd;
     public string potCharismaEnd;

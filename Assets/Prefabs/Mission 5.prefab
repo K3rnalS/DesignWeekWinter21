@@ -51,11 +51,11 @@ MonoBehaviour:
   potReq: 1
   spellReq: 0
   inProgress: 0
+  complete: 0
   nextMission: {fileID: 0}
   handler: {fileID: 0}
-  textBox: {fileID: 0}
-  bg: {fileID: 0}
-  close: {fileID: 0}
+  questHeader: {fileID: 0}
+  character: {fileID: 21300000, guid: 53696a1d957758f43b13fcad305bfc0c, type: 3}
   potPoisonEnd: What a shame! What a horrible harbinger of the end of an era! The
     head of House Holister has died of the awful plague sweeping the city!
   potCharismaEnd: "House Holister has been quite successful in advocating for better

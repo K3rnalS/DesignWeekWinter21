@@ -11,6 +11,7 @@ public class UISlideOut : MonoBehaviour
     public Vector2 startLocation;
     public Vector2 endLocation;
     public iTween.EaseType easeType;
+
     // Start is called before the first frame update
     void Start()
     {

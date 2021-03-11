@@ -54,6 +54,8 @@ MonoBehaviour:
   complete: 0
   nextMission: {fileID: 0}
   handler: {fileID: 0}
+  questHeader: {fileID: 0}
+  character: {fileID: 21300000, guid: 177447b8feb35d54ea42a2df0f00b2a6, type: 3}
   potPoisonEnd: The Duke is dead. Long live the Duchess.
   potCharismaEnd: It seems duchess Conwyn's daughter is set to be married next month.
     It took some convincing, but apparently the duchess is on board with union, and

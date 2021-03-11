@@ -9,6 +9,8 @@ public class MissionHandler : MonoBehaviour
     public List<GameObject> missions;
     int missionCompleteCount = 0;
 
+    public Text questTitle;
+
     //== UI ==//
     public Text textBox; //Slide-out text box for quest descriptions
     public Text alertText; //alert message text
@@ -29,6 +31,8 @@ public class MissionHandler : MonoBehaviour
     {
         GameObject mission = Instantiate(missions[0], transform);
         currentMission = mission;
+        character.sprite = currentMission.GetComponent<MissionObj>().character;
+        questTitle.text = mission.GetComponent<MissionObj>().questName;
     }
 
     // Update is called once per frame
@@ -87,6 +91,7 @@ public class MissionHandler : MonoBehaviour
             GameObject obj = Instantiate(currentMission.GetComponent<MissionObj>().nextMission, transform);
             Destroy(currentMission);
             currentMission = obj;
+            questTitle.text = currentMission.GetComponent<MissionObj>().questName;
         }
         else
         {
@@ -133,8 +138,13 @@ public class MissionHandler : MonoBehaviour
     //delay the ending of a quest -- in the meantime, a new one shows up
     public IEnumerator QuestResult()
     {
-        Instantiate(SlideOutCopy, canvas.transform);
+        GameObject end = Instantiate(SlideOutCopy, canvas.transform);
+        end.SetActive(false);
+
         yield return new WaitForSeconds(Random.Range(15, 30)); //wait a random amount of time, then show the quest ending
+        end.SetActive(true);
+        end.GetComponent<UISlideOut>().ShotSlideOut();
+        Instantiate(finish, end.transform);
     }
 
     public GameObject GetCurrentMission()
