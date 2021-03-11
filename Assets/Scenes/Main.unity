@@ -11805,7 +11805,7 @@ MonoBehaviour:
   Audio: {fileID: 1284815470}
   Announcement: {fileID: 8300000, guid: 099af9d4217c290438c74e6be2655a22, type: 3}
   Bubbling: {fileID: 8300000, guid: 4d3fbed5888dc954b99b7f4e2e8e57b0, type: 3}
-  Clink: {fileID: 8300000, guid: 3a1da1587498beb428674f1a519b2099, type: 3}
+  Clink: {fileID: 8300000, guid: f218cbdaadac5d942a87e9400caa6abc, type: 3}
   Correct: {fileID: 8300000, guid: 594f17b5f9cc7494ebf100e675767aab, type: 3}
   Door: {fileID: 8300000, guid: 8591b94ebf3879542b50e6034a032001, type: 3}
   Paper: {fileID: 8300000, guid: be8f93512160c134eb146c0796b4ee78, type: 3}
