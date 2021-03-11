@@ -25,5 +25,6 @@ public class Ingredient : MonoBehaviour
     public void Interact()
     {
         cauldron.AddIngredient(color);
+		AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Clink);
     }
 }

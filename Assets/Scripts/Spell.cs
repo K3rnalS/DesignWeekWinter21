@@ -50,6 +50,7 @@ public class Spell : MonoBehaviour
     void InsertShape(ShapeType shape, Sprite sprite)
     {
         shapeOrder[currentShapeIndex] = shape;
+		AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Scribble);
 
         switch (currentShapeIndex)
         {
