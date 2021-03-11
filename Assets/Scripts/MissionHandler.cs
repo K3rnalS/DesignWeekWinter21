@@ -31,6 +31,8 @@ public class MissionHandler : MonoBehaviour
 
     public void OpenTextBox(string newText)
     {
+        // this audio code is what will activate the audio.
+        AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Announcement);
         textBox.text = newText;
         textBox.gameObject.SetActive(true);
         bg.gameObject.SetActive(true);
