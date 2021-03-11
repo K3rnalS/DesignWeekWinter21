@@ -7,6 +7,7 @@ using UnityEditor;
 public class UISlideOut : MonoBehaviour
 {
     public bool sildeOut;
+    public float time = 2;
     public Vector2 startLocation;
     public Vector2 endLocation;
     public iTween.EaseType easeType;
@@ -38,7 +39,7 @@ public class UISlideOut : MonoBehaviour
                 iTween.Hash(
                     "from", this.GetComponent<RectTransform>().anchoredPosition,
                     "to", endLocation,
-                    "time",2,
+                    "time", time,
                     "easetype",easeType,
                     "onupdate", "OnAnimationUpdate"));
             sildeOut = true;
@@ -56,7 +57,7 @@ public class UISlideOut : MonoBehaviour
                 iTween.Hash(
                     "from", this.GetComponent<RectTransform>().anchoredPosition,
                     "to", startLocation,
-                    "time", 2,
+                    "time", time,
                     "easetype", easeType,
                     "onupdate", "OnAnimationUpdate"));
             sildeOut = false;
