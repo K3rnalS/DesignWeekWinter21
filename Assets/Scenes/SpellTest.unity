@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cauldron: {fileID: 1942775472}
-  mission: {fileID: 0}
+  mission: {fileID: 1318058051}
 --- !u!64 &206153021
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1318058051}
         m_MethodName: CloseTextBox
         m_Mode: 1
         m_Arguments:
@@ -2043,13 +2043,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMission: {fileID: 0}
   missions:
-  - {fileID: 3999254709901572595, guid: 5ee9e904fdbb4d64a8bed35e4e09621d, type: 3}
-  - {fileID: 5936293613217991903, guid: 2a3c2cc532629e040a413d045944912b, type: 3}
-  - {fileID: 5546420172850093145, guid: 6849e1c2464bbd34498415062d654bb0, type: 3}
-  - {fileID: 3061341909040239214, guid: 5e4854c305d38ea4c8dac53a84246590, type: 3}
-  - {fileID: 5384904998200514677, guid: 16cddc74e1762574295ce89b49f1ec3b, type: 3}
-  - {fileID: 527452003625775323, guid: 9bdc7d12f7512d24693cdfca19023e42, type: 3}
-  - {fileID: 4406343911601600534, guid: 49a883abe6cc0d6498be4bf615078506, type: 3}
+  - {fileID: 3999254709861122499, guid: 5ee9e904fdbb4d64a8bed35e4e09621d, type: 3}
+  - {fileID: 8153807308550946895, guid: 2a3c2cc532629e040a413d045944912b, type: 3}
+  - {fileID: 5546420172850093144, guid: 6849e1c2464bbd34498415062d654bb0, type: 3}
+  - {fileID: 8233042753770202929, guid: 5e4854c305d38ea4c8dac53a84246590, type: 3}
+  - {fileID: 1524938454193194909, guid: 16cddc74e1762574295ce89b49f1ec3b, type: 3}
+  - {fileID: 4472204197435677270, guid: 9bdc7d12f7512d24693cdfca19023e42, type: 3}
+  - {fileID: 2161183973411530867, guid: 49a883abe6cc0d6498be4bf615078506, type: 3}
+  textBox: {fileID: 817568734}
+  bg: {fileID: 1273634998}
+  close: {fileID: 314524526}
 --- !u!4 &1318058052
 Transform:
   m_ObjectHideFlags: 0
