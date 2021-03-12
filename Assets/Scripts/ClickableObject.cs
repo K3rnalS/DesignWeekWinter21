@@ -62,6 +62,8 @@ public class ClickableObject : MonoBehaviour
             obj.GetComponent<Ingredient>().Interact();
         else if (obj.GetComponent<CauldronLiquid>() && !cantInteract)
             obj.GetComponent<CauldronLiquid>().Interact();
+        else if (obj.GetComponent<Cauldron>() && !cantInteract)
+            obj.GetComponent<Cauldron>().Interact();
         else if (obj.gameObject.CompareTag("Spell"))
             SpellMake();
     }

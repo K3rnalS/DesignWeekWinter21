@@ -26,13 +26,15 @@ public class MissionHandler : MonoBehaviour
     public GameObject canvas; //UI Canvas
     public GameObject SlideOutCopy; //a copy of the quest log to duplicate for delayed endings
 
+    int missionCounter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         GameObject mission = Instantiate(missions[0], transform);
         currentMission = mission;
-        character.sprite = currentMission.GetComponent<MissionObj>().character;
-        questTitle.text = mission.GetComponent<MissionObj>().questName;
+
+        UpdateQuestDetails();
     }
 
     // Update is called once per frame
@@ -44,8 +46,6 @@ public class MissionHandler : MonoBehaviour
     public void OpenTextBox(string newText)
     {
         textBox.text = newText;
-        //textBox.gameObject.SetActive(true);
-        //bg.gameObject.SetActive(true);
     }
 
     public void Alert(string alert)
@@ -86,44 +86,11 @@ public class MissionHandler : MonoBehaviour
             return;
         }
 
-        if (currentMission != null && currentMission.GetComponent<MissionObj>().nextMission != null)
-        {
-            GameObject obj = Instantiate(currentMission.GetComponent<MissionObj>().nextMission, transform);
-            Destroy(currentMission);
-            currentMission = obj;
-            questTitle.text = currentMission.GetComponent<MissionObj>().questName;
-        }
-        else
-        {
-            int checkCount = 0;
-            int index = Random.Range(0, missions.Count);
-            GameObject obj;
+        GameObject mission = Instantiate(missions[missionCounter], transform);
+        missionCounter++;
+        currentMission = mission;
 
-            //keep generating a number until a mission that isn't in progress or complete shows up
-            while (missions[index].GetComponent<MissionObj>().complete || missions[index].GetComponent<MissionObj>().inProgress)
-            {
-                if (checkCount > 10)
-                {
-                    for (int i = 0; i < missions.Count; i++)
-                    {
-                        if (!missions[i].GetComponent<MissionObj>().complete)
-                        {
-                            obj = Instantiate(missions[i], transform);
-                            Destroy(currentMission);
-                            currentMission = obj;
-                            return;
-                        }
-                    }
-                }
-                index = Random.Range(0, missions.Count);
-                checkCount++;
-            }
-
-            obj = Instantiate(missions[index], transform);
-            Destroy(currentMission);
-            currentMission = obj;
-        }
-
+        UpdateQuestDetails();
     }
 
     public void CompleteMission()
@@ -147,6 +114,13 @@ public class MissionHandler : MonoBehaviour
         end.GetComponent<UISlideOut>().destroyable = true;
         end.GetComponent<UISlideOut>().ShotSlideOut();
 
+    }
+
+    void UpdateQuestDetails()
+    {
+        questHeader.text = currentMission.GetComponent<MissionObj>().simpText;
+        questTitle.text = currentMission.GetComponent<MissionObj>().questName;
+        character.sprite = currentMission.GetComponent<MissionObj>().character;
     }
 
     public GameObject GetCurrentMission()

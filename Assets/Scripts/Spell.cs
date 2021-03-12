@@ -17,11 +17,6 @@ public class Spell : MonoBehaviour
     public Sprite circle;
     public Sprite pentagon;
 
-    public AudioSource audioSrc;
-    public AudioClip paperRuffle;
-    public AudioClip correct;
-    public AudioClip wrong;
-
     public enum ShapeType 
     {
         Square,
@@ -91,6 +86,7 @@ public class Spell : MonoBehaviour
                 if (shapeOrder[2] == ShapeType.Circle)
                     if (shapeOrder[3] == ShapeType.Square)
                     {
+                        ResetSpell();
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(0);
                         return;
                     }
@@ -102,6 +98,7 @@ public class Spell : MonoBehaviour
                 if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Pentagon)
                     {
+                        ResetSpell();
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(1);
                         return;
                     }
@@ -113,6 +110,7 @@ public class Spell : MonoBehaviour
                 if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Pentagon)
                     {
+                        ResetSpell();
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(2);
                         return;
                     }
@@ -124,6 +122,7 @@ public class Spell : MonoBehaviour
                 if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Pentagon)
                     {
+                        ResetSpell();
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(3);
                         return;
                     }

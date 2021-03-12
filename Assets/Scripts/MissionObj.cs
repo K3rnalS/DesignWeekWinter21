@@ -88,11 +88,12 @@ public class MissionObj : MonoBehaviour
         }
     }
 
-    public void SpellCheck(int spellType)
+    public void SpellCheck(int spellType, Spell spell = null)
     {
         if (!spellReq)
         {
             handler.Alert("I don't think a spell will come in handy for this!");
+
             return;
         }
 
