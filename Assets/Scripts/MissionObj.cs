@@ -88,7 +88,7 @@ public class MissionObj : MonoBehaviour
         }
     }
 
-    public void SpellCheck(int spellType)
+    public void SpellCheck(int spellType, Spell spell = null)
     {
         if (!spellReq)
         {
