@@ -18,7 +18,7 @@ public class Cauldron : MonoBehaviour
     public PotionOutcome purple;
     public PotionOutcome orange;
     public PotionOutcome cyan;
-    public PotionOutcome violet;
+    public PotionOutcome magenta;
 
     //Camera Check
     public GameObject CameraLoc;
@@ -58,24 +58,24 @@ public class Cauldron : MonoBehaviour
     {
         GameObject potion = new GameObject("Potion", typeof(Potion));
 
-        if (ings.Contains(Color.red) && ings.Contains(Color.blue))
+        if (ings[0] == Color.blue && ings[1] == Color.red)
 		{
             potion.GetComponent<Potion>().color = purple.result;
 			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
 		}
-        else if (ings.Contains(Color.red) && ings.Contains(Color.green))
+        else if (ings[0] == Color.red && ings[1] == Color.green)
 		{
             potion.GetComponent<Potion>().color = orange.result;
 			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
 		}
-        else if (ings.Contains(Color.green) && ings.Contains(Color.blue))
+        else if (ings[0] == Color.green && ings[1] == Color.blue)
 		{
             potion.GetComponent<Potion>().color = cyan.result;
 			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
 		}
-        else if (ings.Contains(Color.blue) && ings.Contains(Color.blue))
+        else if (ings[0] == Color.red && ings[1] == Color.blue)
 		{
-            potion.GetComponent<Potion>().color = violet.result;
+            potion.GetComponent<Potion>().color = magenta.result;
 			AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Correct);
 		}
         else
@@ -103,19 +103,19 @@ public class Cauldron : MonoBehaviour
     {
         purple.col1 = Color.red;
         purple.col2 = Color.blue;
-        purple.result = new Color(0.50f, 0, 0.50f);
+        purple.result = new Color(96f / 255f, 92f / 255f, 168f / 255f);
 
         orange.col1 = Color.red;
         orange.col2 = Color.green;
-        orange.result = new Color(1, 0.65f, 0);
+        orange.result = new Color(247f / 255f, 148f / 255f, 29f / 255f);
 
         cyan.col1 = Color.green;
         cyan.col2 = Color.blue;
-        cyan.result = new Color(0, 1, 1);
+        cyan.result = new Color(28f / 255f, 187f / 255f, 180f / 255f);
 
-        violet.col1 = Color.red;
-        violet.col2 = Color.green;
-        violet.result = new Color(0.50f, 0, 1);
+        magenta.col1 = Color.red;
+        magenta.col2 = Color.green;
+        magenta.result = new Color(237f / 255f, 20f / 255f, 91f / 255f);
     }
 
     public void Interact()

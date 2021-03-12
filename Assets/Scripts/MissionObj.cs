@@ -29,10 +29,10 @@ public class MissionObj : MonoBehaviour
     public string spellProtEnd;
     public string spellSummEnd;
 
-    Color purple = new Color(0.50f, 0, 0.50f);
-    Color orange = new Color(1, 0.65f, 0);
-    Color cyan = new Color(0, 1, 1);
-    Color violet = new Color(0.50f, 0, 1);
+    Color purple = new Color(96f / 255f, 92f / 255f, 168f / 255f);
+    Color orange = new Color(247f / 255f, 148f / 255f, 29f / 255f);
+    Color cyan = new Color(28f / 255f, 187f / 255f, 180f / 255f);
+    Color magenta = new Color(237f / 255f, 20f / 255f, 91f / 255f);
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +81,7 @@ public class MissionObj : MonoBehaviour
             handler.OpenTextBox(potTruthEnd);
             CompleteMission();
         }
-        else if (col == violet)
+        else if (col == magenta)
         {
             handler.OpenTextBox(potCharismaEnd);
             CompleteMission();
