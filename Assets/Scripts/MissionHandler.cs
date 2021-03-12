@@ -86,8 +86,8 @@ public class MissionHandler : MonoBehaviour
             return;
         }
 
-        GameObject mission = Instantiate(missions[missionCounter], transform);
         missionCounter++;
+        GameObject mission = Instantiate(missions[missionCounter], transform);
         currentMission = mission;
 
         UpdateQuestDetails();
@@ -111,7 +111,7 @@ public class MissionHandler : MonoBehaviour
         GameObject end = Instantiate(SlideOutCopy, canvas.transform);
         end.SetActive(false);
 
-        yield return new WaitForSeconds(Random.Range(15, 30)); //wait a random amount of time, then show the quest ending
+        yield return new WaitForSeconds(2); //wait a random amount of time, then show the quest ending
         end.SetActive(true);
         end.GetComponent<UISlideOut>().destroyable = true;
         end.GetComponent<UISlideOut>().ShotSlideOut();
