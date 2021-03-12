@@ -9,6 +9,10 @@ public class CauldronLiquid : MonoBehaviour
     public MissionHandler mission;
     MeshRenderer rend;
 
+    //Camera Check
+    public GameObject CameraLoc;
+    public GameObject CameraPinLoc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +27,13 @@ public class CauldronLiquid : MonoBehaviour
 
     public void Interact()
     {
-        if (cauldron.ings.Count == 2)
-            mission.Prompt("Create the potion?", 0);
-        else
-            mission.Alert("This isn't much of a potion...");
+        if (CameraLoc.transform.position == CameraPinLoc.transform.position)
+        {
+            if (cauldron.ings.Count == 2)
+                mission.Prompt("Create the potion?", 0);
+            else
+                mission.Alert("This isn't much of a potion...");
+        }
     }
 
     public void Check()
