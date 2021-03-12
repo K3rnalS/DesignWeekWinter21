@@ -93,6 +93,7 @@ public class MissionObj : MonoBehaviour
         if (!spellReq)
         {
             handler.Alert("I don't think a spell will come in handy for this!");
+
             return;
         }
 
