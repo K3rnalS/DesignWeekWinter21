@@ -20,6 +20,10 @@ public class Cauldron : MonoBehaviour
     public PotionOutcome cyan;
     public PotionOutcome violet;
 
+    //Camera Check
+    public GameObject CameraLoc;
+    public GameObject CameraPinLoc;
+
     public List<Color> ings;
 
     // Start is called before the first frame update
@@ -112,5 +116,16 @@ public class Cauldron : MonoBehaviour
         violet.col1 = Color.red;
         violet.col2 = Color.green;
         violet.result = new Color(0.50f, 0, 1);
+    }
+
+    public void Interact()
+    {
+        if (CameraLoc.transform.position == CameraPinLoc.transform.position)
+        {
+            if (ings.Count == 2)
+                mission.Prompt("Create the potion?", 0);
+            else
+                mission.Alert("This isn't much of a potion...");
+        }
     }
 }
