@@ -44,6 +44,9 @@ public class Spell : MonoBehaviour
 
     void InsertShape(ShapeType shape, Sprite sprite)
     {
+        if (currentShapeIndex >= 4)
+            return;
+
         shapeOrder[currentShapeIndex] = shape;
 		AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Scribble);
 

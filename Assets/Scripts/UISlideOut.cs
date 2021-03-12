@@ -22,6 +22,9 @@ public class UISlideOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.mousePosition.x > Screen.width - 50)
+            ShotSlideOut();
+
         if (Application.isPlaying)
             return;
 
