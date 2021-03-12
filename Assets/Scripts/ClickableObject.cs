@@ -11,6 +11,8 @@ public class ClickableObject : MonoBehaviour
     public GameObject header;
     public Text headerText;
 
+    public bool cantInteract = true; //can't interact with smaller objects when on overview or quest open
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +33,17 @@ public class ClickableObject : MonoBehaviour
                     case "Spell":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Spell);
 						AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Paper);
+                        cantInteract = false;
                         break;
                     case "Potion":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Potion);
                         header.SetActive(true);
+                        cantInteract = false;
                         break;
                     case "PotionSheet":
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.PotionSheet);
 						AudioManager.audioInstance.Audio.PlayOneShot(AudioManager.audioInstance.Paper);
+                        cantInteract = false;
                         break;
                     default:
                         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
@@ -53,9 +58,9 @@ public class ClickableObject : MonoBehaviour
 
     void Interact(GameObject obj)
     {
-        if (obj.GetComponent<Ingredient>())
+        if (obj.GetComponent<Ingredient>() && !cantInteract)
             obj.GetComponent<Ingredient>().Interact();
-        else if (obj.GetComponent<CauldronLiquid>())
+        else if (obj.GetComponent<CauldronLiquid>() && !cantInteract)
             obj.GetComponent<CauldronLiquid>().Interact();
         else if (obj.gameObject.CompareTag("Spell"))
             SpellMake();
@@ -77,6 +82,7 @@ public class ClickableObject : MonoBehaviour
     {
         Camera.main.GetComponent<CameraMovement>().MoveTo(EnumList.PresetType.Default);
         header.SetActive(false);
+        cantInteract = true;
         CloseSpellMake();
     }
 

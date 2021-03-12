@@ -12,7 +12,6 @@ public class UISlideOut : MonoBehaviour
     public Vector2 endLocation;
     public iTween.EaseType easeType;
     public bool destroyable = false; //destroys after sliding in if true
-    bool firstSlide = true;
 
     // Start is called before the first frame update
     void Start()

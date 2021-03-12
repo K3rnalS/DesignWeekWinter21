@@ -110,8 +110,8 @@ public class Spell : MonoBehaviour
         else if (shapeOrder[0] == ShapeType.Triangle) //Curse
         {
             if (shapeOrder[1] == ShapeType.Pentagon)
-                if (shapeOrder[2] == ShapeType.Square)
-                    if (shapeOrder[3] == ShapeType.Circle)
+                if (shapeOrder[2] == ShapeType.Pentagon)
+                    if (shapeOrder[3] == ShapeType.Pentagon)
                     {
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(2);
                         return;
