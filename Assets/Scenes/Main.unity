@@ -5652,7 +5652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &597592336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16581,7 +16581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1560861982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20641,6 +20641,7 @@ MonoBehaviour:
   currentSpell: {fileID: 1560861981}
   header: {fileID: 1563912635}
   headerText: {fileID: 52827506}
+  cantInteract: 1
 --- !u!4 &1942775474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b68a94857cea334585c4d27210a04ed,
