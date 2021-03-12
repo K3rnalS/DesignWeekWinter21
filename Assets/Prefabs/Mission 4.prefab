@@ -47,7 +47,8 @@ MonoBehaviour:
   NPCIntro: I am friends with a young lord from house Atredes, while I have grown
     to appreciate his friendship and perspective, we seem to bicker no matter how
     hard I try, might you offer me a way to bridge the gap between us?
-  simpText: 
+  simpText: A young man from house Corrim requests help endearing himself to a prickly
+    friend.
   potReq: 0
   spellReq: 1
   inProgress: 0

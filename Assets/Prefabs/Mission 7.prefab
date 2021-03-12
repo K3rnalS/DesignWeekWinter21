@@ -48,7 +48,7 @@ MonoBehaviour:
     of his mine workers. He claims that they've become superstitious lately, and
     refuse to work in the new vein of the mine. He wants to look into it himself.
     Perhaps we can offer him a spell to help his investigation?
-  simpText: 
+  simpText: House Atredes want's to investigate their mine workers.
   potReq: 0
   spellReq: 1
   inProgress: 0

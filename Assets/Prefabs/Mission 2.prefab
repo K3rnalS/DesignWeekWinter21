@@ -48,7 +48,7 @@ MonoBehaviour:
     to get past your guards. They giggle and laugh and talk about how much they want
     to be a master magician when they grow up. Before long one of your agents rushes
     in to cart them away, apologizing profusely to you.
-  simpText: 
+  simpText: A small child has demanded a spell from you!
   potReq: 0
   spellReq: 1
   inProgress: 0

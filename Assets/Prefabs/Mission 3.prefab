@@ -48,7 +48,8 @@ MonoBehaviour:
     recently. A rival of theirs from house Corrim is set to attend a grand ball.
     He is requesting our help to make a fool of said rival in front of the aristocracy
     by slipping something into his drink.
-  simpText: 
+  simpText: A young man from house Atredes requests help embarrassing a rival by
+    slipping something in his drink.
   potReq: 1
   spellReq: 0
   inProgress: 0
