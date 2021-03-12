@@ -47,7 +47,7 @@ MonoBehaviour:
   NPCIntro: 'From the desk of Duke Holister: A plague is sweeping the city, my noble
     house is dying! Please, what can you do to help us? You are our last hope! Our
     line must continue!'
-  simpText: 
+  simpText: Holister requires help surviving the plague
   potReq: 1
   spellReq: 0
   inProgress: 0

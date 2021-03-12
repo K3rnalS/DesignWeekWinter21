@@ -47,7 +47,7 @@ MonoBehaviour:
   NPCIntro: "A Minister from house Ellander is planning to sneak away during a party
     at house Corrim. She say\u2019s that she is willing to share what information
     she finds with our agent, if we can lend her sufficient help. "
-  simpText: 
+  simpText: House Ellander requests your help pilfering secrets from house Corrim.
   potReq: 0
   spellReq: 1
   inProgress: 0

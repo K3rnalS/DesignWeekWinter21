@@ -98,6 +98,7 @@ public class MissionHandler : MonoBehaviour
         if (currentMission.GetComponent<MissionObj>().complete)
         {
             missionCompleteCount += 1;
+            questTitle.text = "Quest Completed: Item Delivered";
             StartCoroutine(QuestResult());
             GenerateMission();
         }
@@ -106,6 +107,7 @@ public class MissionHandler : MonoBehaviour
     //delay the ending of a quest -- in the meantime, a new one shows up
     public IEnumerator QuestResult()
     {
+
         GameObject end = Instantiate(SlideOutCopy, canvas.transform);
         end.SetActive(false);
 
