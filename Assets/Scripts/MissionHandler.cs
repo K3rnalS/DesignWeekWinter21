@@ -131,6 +131,7 @@ public class MissionHandler : MonoBehaviour
         if (currentMission.GetComponent<MissionObj>().complete)
         {
             missionCompleteCount += 1;
+            StartCoroutine(QuestResult());
             GenerateMission();
         }
     }
@@ -143,8 +144,9 @@ public class MissionHandler : MonoBehaviour
 
         yield return new WaitForSeconds(Random.Range(15, 30)); //wait a random amount of time, then show the quest ending
         end.SetActive(true);
+        end.GetComponent<UISlideOut>().destroyable = true;
         end.GetComponent<UISlideOut>().ShotSlideOut();
-        Instantiate(finish, end.transform);
+
     }
 
     public GameObject GetCurrentMission()

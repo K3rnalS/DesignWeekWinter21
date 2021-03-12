@@ -74,10 +74,13 @@ public class Spell : MonoBehaviour
                 break;
         }
 
+        if (currentShapeIndex == 1 && shape == ShapeType.Square)
+            UIShape2.transform.Rotate(0, 0, 45);
+
         currentShapeIndex += 1;
 
         if (currentShapeIndex >= 4)
-            CheckSpell();
+            mission.Prompt("Try out this spell?", 1);
     }
 
     void CheckSpell()
@@ -87,7 +90,10 @@ public class Spell : MonoBehaviour
             if (shapeOrder[1] == ShapeType.Square)
                 if (shapeOrder[2] == ShapeType.Circle)
                     if (shapeOrder[3] == ShapeType.Square)
+                    {
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(0);
+                        return;
+                    }
         }
 
         else if (shapeOrder[0] == ShapeType.Pentagon) //Invisibility
@@ -95,7 +101,10 @@ public class Spell : MonoBehaviour
             if (shapeOrder[1] == ShapeType.Circle)
                 if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Pentagon)
+                    {
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(1);
+                        return;
+                    }
         }
 
         else if (shapeOrder[0] == ShapeType.Triangle) //Curse
@@ -103,14 +112,24 @@ public class Spell : MonoBehaviour
             if (shapeOrder[1] == ShapeType.Pentagon)
                 if (shapeOrder[2] == ShapeType.Square)
                     if (shapeOrder[3] == ShapeType.Circle)
+                    {
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(2);
+                        return;
+                    }
         }
 
         else if (shapeOrder[0] == ShapeType.Square) //Protection
+        {
             if (shapeOrder[1] == ShapeType.Square)
                 if (shapeOrder[2] == ShapeType.Circle)
                     if (shapeOrder[3] == ShapeType.Pentagon)
+                    {
                         mission.GetCurrentMission().GetComponent<MissionObj>().SpellCheck(3);
+                        return;
+                    }
+        }
+
+        mission.Alert("That spell didn't seem to do anything");
 
         ResetSpell();
     }
@@ -121,6 +140,7 @@ public class Spell : MonoBehaviour
         UIShape1.color = new Color(1, 1, 1, 0);
         UIShape2.sprite = null;
         UIShape2.color = new Color(1, 1, 1, 0);
+        UIShape2.transform.rotation = Quaternion.identity;
         UIShape3.sprite = null;
         UIShape3.color = new Color(1, 1, 1, 0);
         UIShape4.sprite = null;
@@ -134,8 +154,8 @@ public class Spell : MonoBehaviour
 
     public void Check()
     {
-        CheckSpell();
         mission.CloseAlert();
+        CheckSpell();
     }
 
     public void Decline()

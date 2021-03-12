@@ -55,6 +55,7 @@ public class MissionObj : MonoBehaviour
     public void CompleteMission()
     {
         complete = true;
+        handler.CompleteMission();
     }
 
     public void PotionCheck(Color col)

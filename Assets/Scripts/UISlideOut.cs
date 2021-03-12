@@ -11,6 +11,8 @@ public class UISlideOut : MonoBehaviour
     public Vector2 startLocation;
     public Vector2 endLocation;
     public iTween.EaseType easeType;
+    public bool destroyable = false; //destroys after sliding in if true
+    bool firstSlide = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +23,6 @@ public class UISlideOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (Application.isPlaying)
             return;
 
@@ -62,7 +62,11 @@ public class UISlideOut : MonoBehaviour
                     "easetype", easeType,
                     "onupdate", "OnAnimationUpdate"));
             sildeOut = false;
+
+            if (destroyable)
+                StartCoroutine(Destroyer());
         }
+
     }
 
     /// <summary>
@@ -72,6 +76,12 @@ public class UISlideOut : MonoBehaviour
     private void OnAnimationUpdate(Vector2 v2)
     {
         this.GetComponent<RectTransform>().anchoredPosition = v2;
+    }
+
+    public IEnumerator Destroyer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
     }
      
 }
